@@ -1,24 +1,31 @@
-import { motion, useScroll } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { useState } from "react";
 import "./styles.css";
+
 const Header = () => {
   const { scrollY } = useScroll();
+  const isHeaderHidden = scrollY.getPrevious() > 500;
 
-  const [hidden, setHidden] = useState(false);
-  
-  function update() {
-    // if (scrollY?.current < scrollY?.prev) {
-    //   setHidden(false);
-    // } else if (scrollY?.current > 100 && scrollY?.current > scrollY?.prev) {
-    //   setHidden(true);
-    // }
-  }
-
-  useEffect(() => {
-    return scrollY.onChange(() => {
-      update();
-    });
+  const [hidden, setHidden] = useState(isHeaderHidden);
+  const [headerBorder, setHeaderBorder] = useState("transparent");
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest < scrollY.getPrevious()) {
+      setHidden(false);
+      if (latest > 300) {
+        setHeaderBorder("var(--grey-xs)");
+      } else {
+        setHeaderBorder("transparent");
+      }
+    } else if (latest > 500) {
+      setHidden(true);
+    }
   });
+
+  const headerVariants = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: -50 },
+  };
+
   const item = {
     hidden: (i: number) => {
       return i == 2 ? { y: 0, opacity: 1 } : { y: -150, opacity: 0 };
@@ -35,7 +42,16 @@ const Header = () => {
     }),
   };
   return (
-    <div className="header">
+    <motion.header
+      className="header"
+      initial={hidden ? "hidden" : "visible"}
+      animate={hidden ? "hidden" : "visible"}
+      variants={headerVariants}
+      transition={{
+        bounce: 0,
+      }}
+      style={{ borderColor: headerBorder }}
+    >
       <div className="container">
         <div className="header__inner">
           <nav className="nav">
@@ -57,7 +73,7 @@ const Header = () => {
           </nav>
         </div>
       </div>
-    </div>
+    </motion.header>
   );
 };
 

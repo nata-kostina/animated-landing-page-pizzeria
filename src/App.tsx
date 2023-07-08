@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <Header />
-      <main style={{height: "150vh"}}>Hi</main>
+      <main style={{height: "350vh"}}>Hi</main>
     </>
   );
 }
