@@ -30,11 +30,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy
-        run: npm run deploy
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
