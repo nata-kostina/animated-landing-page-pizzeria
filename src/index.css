@@ -1,0 +1,48 @@
+:root {
+  /* COLORS */
+  --text-default: #333333;
+  --bg-color: #f4f1ea;
+
+  --grey-xs: #E1E1E1;
+  /* SIZES */
+  --font-size-default: 1.6rem;
+}
+
+@font-face {
+    font-family: "Oswald";
+    src: url("./assets/fonts/Oswald-Regular.ttf");
+    font-weight: 400;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+
+  font-family: "Oswald", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: var(--font-size-default);
+  color: var(--text-default);
+
+  background-color: var(--bg-color);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+
+  max-width: 124rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
