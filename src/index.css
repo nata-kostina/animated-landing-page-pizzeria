@@ -1,17 +1,34 @@
 :root {
   /* COLORS */
+  --color-primary: #c33130;
+  --color-secondary: #70C737;
   --text-default: #333333;
-  --bg-color: #f4f1ea;
+  --color-bg: #f4f1ea;
 
   --grey-xs: #E1E1E1;
   /* SIZES */
+  --header-height: 10rem;
+  /* FONTS */
   --font-size-default: 1.6rem;
+  --font-size-m: 1.8rem;
+  --font-size-l: 2.4rem;
+  --font-size-xl: 2.8rem;
 }
 
 @font-face {
     font-family: "Oswald";
     src: url("./assets/fonts/Oswald-Regular.ttf");
     font-weight: 400;
+}
+@font-face {
+    font-family: "Oswald";
+    src: url("./assets/fonts/Oswald-Medium.ttf");
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Oswald";
+    src: url("./assets/fonts/Oswald-SemiBold.ttf");
+    font-weight: 600;
 }
 
 *,
@@ -35,7 +52,7 @@ body {
   font-size: var(--font-size-default);
   color: var(--text-default);
 
-  background-color: var(--bg-color);
+  background-color: var(--color-bg);
 }
 
 .container {
@@ -45,4 +62,6 @@ body {
   max-width: 124rem;
   padding: 0 1.5rem;
   margin: 0 auto;
+
+  background-color: inherit;
 }

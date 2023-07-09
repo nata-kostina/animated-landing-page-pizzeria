@@ -1,10 +1,11 @@
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
 import "./styles.css";
+import cn from "classnames";
 
 const Header = () => {
   const { scrollY } = useScroll();
-  const isHeaderHidden = scrollY.getPrevious() > 500;
+  const isHeaderHidden = scrollY.getPrevious() > 300;
 
   const [hidden, setHidden] = useState(isHeaderHidden);
   const [headerBorder, setHeaderBorder] = useState("transparent");
@@ -16,7 +17,7 @@ const Header = () => {
       } else {
         setHeaderBorder("transparent");
       }
-    } else if (latest > 500) {
+    } else if (latest > 300) {
       setHidden(true);
     }
   });
@@ -64,7 +65,12 @@ const Header = () => {
                   className="nav__item"
                   key={link.id}
                 >
-                  <a href="#" className="nav__link">
+                  <a
+                    href="#"
+                    className={cn("nav__link", {
+                      ["nav__link--main"]: link.title === "Don Peppe",
+                    })}
+                  >
                     {link.title}
                   </a>
                 </motion.li>
