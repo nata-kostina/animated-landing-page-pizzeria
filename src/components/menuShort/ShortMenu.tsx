@@ -6,11 +6,8 @@ import Img4 from "../../assets/img/menu/pizza/mediterranea.png";
 import Img5 from "../../assets/img/menu/pizza/parmagiana.png";
 import Img6 from "../../assets/img/menu/pizza/boscaiola.png";
 import ShortMenuItem from "./ShortMenuItem";
-import { useScroll } from "framer-motion";
-import { useTransform } from "framer-motion";
+
 const ShortMenu = () => {
-  const { scrollYProgress } = useScroll();
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, 75]);
   return (
     <section className={styles.menu}>
       <div className={styles.menu__content}>
@@ -61,32 +58,5 @@ const ShortMenu = () => {
     </section>
   );
 };
-
-const menuItems = [
-  {
-    id: 0,
-    img: Img1,
-  },
-  {
-    id: 1,
-    img: Img2,
-  },
-  {
-    id: 2,
-    img: Img3,
-  },
-  {
-    id: 3,
-    img: Img4,
-  },
-  {
-    id: 4,
-    img: Img5,
-  },
-  {
-    id: 5,
-    img: Img6,
-  },
-];
 
 export default ShortMenu;
