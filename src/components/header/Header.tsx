@@ -1,4 +1,4 @@
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll, Variants } from "framer-motion";
 import { useState } from "react";
 import "./styles.css";
 import cn from "classnames";
@@ -22,12 +22,12 @@ const Header = () => {
     }
   });
 
-  const headerVariants = {
+  const headerVariants: Variants = {
     visible: { opacity: 1, y: 0 },
     hidden: { opacity: 0, y: -50 },
   };
 
-  const item = {
+  const item: Variants = {
     hidden: (i: number) => {
       return i == 2 ? { y: 0, opacity: 1 } : { y: -150, opacity: 0 };
     },

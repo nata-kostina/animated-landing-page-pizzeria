@@ -1,0 +1,42 @@
+@use "../../styles/mixins/base.scss" as b;
+@use "../../styles/abstracts/variables.scss" as v;
+
+.menu {
+    padding: 7rem 0;
+
+    &__content {
+        display: grid;
+        grid-template-areas:
+            "pizza-1  . pizza-2"
+            "pizza-3  title pizza-4"
+            "pizza-5  . pizza-6";
+        grid-template-columns: 1fr 50rem 1fr;
+        align-items: center;
+        justify-items: center;
+        grid-row-gap: 2rem;
+    }
+
+    &__item {
+    }
+
+    &__img-box {
+        width: 37rem;
+        height: 37rem;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__title {
+        grid-area: title;
+
+        font-family: v.$font-accent;
+        color: v.$color-primary;
+        font-size: 6rem;
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
