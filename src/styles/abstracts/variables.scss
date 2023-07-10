@@ -1,0 +1,26 @@
+/*
+    COLORS
+*/
+
+$color-primary: #c33130;
+
+/*
+    SIZES
+*/
+
+$font-size-default: 1.6rem;
+$font-size-m: 1.8rem;
+$font-size-l: 2.4rem;
+$font-size-xl: 2.8rem;
+
+/* 
+    FONTS
+*/
+
+@font-face {
+    font-family: Grandstander-Regular;
+    src: url(../../assets/fonts/Grandstander-Regular.ttf);
+    font-weight: 400;
+}
+
+$font-accent: "Grandstander-Regular", sans-serif;

@@ -1,12 +1,12 @@
 import RunningText from "../ui/runningText/RunningText";
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 import ImgHero from "../../assets/img/hero/hero.png";
 
 const Hero = () => {
   return (
     <section className={styles.hero}>
-      <div className={styles.hero__inner}>
-        <div className={styles["text-box"]}>
+      <div className={styles.hero__content}>
+        <div className={styles["hero__text-box"]}>
           <RunningText direction="left" offset={0}>
             Pizza time
           </RunningText>

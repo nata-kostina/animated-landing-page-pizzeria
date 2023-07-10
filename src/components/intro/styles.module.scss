@@ -1,0 +1,32 @@
+@use "../../styles/mixins/base.scss" as b;
+@use "../../styles/abstracts/variables.scss" as v;
+
+.intro {
+    @include b.section;
+    & .container {
+        @include b.container;
+    }
+
+    &__content {
+        width: 100%;
+        text-align: center;
+    }
+
+    &__item {
+        overflow: hidden;
+
+        &:not(:last-child) {
+            margin-bottom: 7rem;
+        }
+    }
+
+    &__text {
+        position: relative;
+
+        font-family: v.$font-accent;
+        font-size: 12rem;
+        color: v.$color-primary;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+}
